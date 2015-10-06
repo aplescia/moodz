@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A8FB7BE61BC4540E006F0441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7BE51BC4540E006F0441 /* AppDelegate.swift */; };
-		A8FB7BE81BC4540E006F0441 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7BE71BC4540E006F0441 /* ViewController.swift */; };
+		A8FB7BE81BC4540E006F0441 /* moodzMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7BE71BC4540E006F0441 /* moodzMapViewController.swift */; };
 		A8FB7BEB1BC4540E006F0441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB7BE91BC4540E006F0441 /* Main.storyboard */; };
 		A8FB7BED1BC4540E006F0441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FB7BEC1BC4540E006F0441 /* Assets.xcassets */; };
 		A8FB7BF01BC4540E006F0441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB7BEE1BC4540E006F0441 /* LaunchScreen.storyboard */; };
 		A8FB7BFB1BC4540E006F0441 /* moodzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7BFA1BC4540E006F0441 /* moodzTests.swift */; };
 		A8FB7C061BC4540E006F0441 /* moodzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7C051BC4540E006F0441 /* moodzUITests.swift */; };
+		A8FB7C151BC45526006F0441 /* moodzChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7C141BC45526006F0441 /* moodzChoiceViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		A8FB7BE21BC4540E006F0441 /* moodz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FB7BE51BC4540E006F0441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A8FB7BE71BC4540E006F0441 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A8FB7BE71BC4540E006F0441 /* moodzMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodzMapViewController.swift; sourceTree = "<group>"; };
 		A8FB7BEA1BC4540E006F0441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8FB7BEC1BC4540E006F0441 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8FB7BEF1BC4540E006F0441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		A8FB7C011BC4540E006F0441 /* moodzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moodzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FB7C051BC4540E006F0441 /* moodzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodzUITests.swift; sourceTree = "<group>"; };
 		A8FB7C071BC4540E006F0441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8FB7C141BC45526006F0441 /* moodzChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moodzChoiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				A8FB7BE51BC4540E006F0441 /* AppDelegate.swift */,
-				A8FB7BE71BC4540E006F0441 /* ViewController.swift */,
+				A8FB7BE71BC4540E006F0441 /* moodzMapViewController.swift */,
 				A8FB7BE91BC4540E006F0441 /* Main.storyboard */,
 				A8FB7BEC1BC4540E006F0441 /* Assets.xcassets */,
 				A8FB7BEE1BC4540E006F0441 /* LaunchScreen.storyboard */,
 				A8FB7BF11BC4540E006F0441 /* Info.plist */,
+				A8FB7C141BC45526006F0441 /* moodzChoiceViewController.swift */,
 			);
 			path = moodz;
 			sourceTree = "<group>";
@@ -255,8 +258,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8FB7BE81BC4540E006F0441 /* ViewController.swift in Sources */,
+				A8FB7BE81BC4540E006F0441 /* moodzMapViewController.swift in Sources */,
 				A8FB7BE61BC4540E006F0441 /* AppDelegate.swift in Sources */,
+				A8FB7C151BC45526006F0441 /* moodzChoiceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
