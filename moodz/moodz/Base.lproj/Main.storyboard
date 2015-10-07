@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="top" id="1JD-bb-lce"/>
                         <viewControllerLayoutGuide type="bottom" id="Xkg-Bq-6DF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JZm-jF-IbZ" customClass="moodz">
+                    <view key="view" contentMode="scaleToFill" id="JZm-jF-IbZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
