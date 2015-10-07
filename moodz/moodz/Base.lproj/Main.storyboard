@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="top" id="1JD-bb-lce"/>
                         <viewControllerLayoutGuide type="bottom" id="Xkg-Bq-6DF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JZm-jF-IbZ" customClass="Moodz">
+                    <view key="view" contentMode="scaleToFill" id="JZm-jF-IbZ" customClass="moodz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -47,12 +47,9 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="geu-iO-mae"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQs-mK-vmP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQs-mK-vmP">
                                 <rect key="frame" x="-51" y="301" width="703" height="100"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="XCX-P5-uLM"/>
-                                </constraints>
                                 <state key="normal" title="Adventurous" backgroundImage="adventure">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -107,13 +104,13 @@
                             <constraint firstItem="EaL-fD-8Gm" firstAttribute="leading" secondItem="kOc-Sp-oYg" secondAttribute="leading" id="Efi-Be-aJy"/>
                             <constraint firstItem="gh8-Uu-PnC" firstAttribute="trailing" secondItem="Pcb-rr-c2z" secondAttribute="trailing" id="GtO-Wp-4Pf"/>
                             <constraint firstItem="Pcb-rr-c2z" firstAttribute="bottom" secondItem="Xkg-Bq-6DF" secondAttribute="top" id="Gvc-Se-kAt"/>
-                            <constraint firstItem="wQs-mK-vmP" firstAttribute="trailing" secondItem="gh8-Uu-PnC" secondAttribute="trailing" id="LKJ-Mf-QcE"/>
                             <constraint firstItem="Xkg-Bq-6DF" firstAttribute="top" secondItem="BWv-gp-6m2" secondAttribute="bottom" constant="506" id="LUO-BY-cb1"/>
-                            <constraint firstItem="wQs-mK-vmP" firstAttribute="top" secondItem="EaL-fD-8Gm" secondAttribute="bottom" constant="2" id="Nhn-mZ-Pcb"/>
-                            <constraint firstItem="wQs-mK-vmP" firstAttribute="leading" secondItem="gh8-Uu-PnC" secondAttribute="leading" id="UbG-0e-CzF"/>
-                            <constraint firstItem="Pcb-rr-c2z" firstAttribute="top" secondItem="wQs-mK-vmP" secondAttribute="bottom" constant="99" id="V6Q-4Z-zBg"/>
                             <constraint firstItem="kOc-Sp-oYg" firstAttribute="leading" secondItem="JZm-jF-IbZ" secondAttribute="leading" id="Z1A-1G-p0B"/>
                             <constraint firstItem="BWv-gp-6m2" firstAttribute="centerX" secondItem="JZm-jF-IbZ" secondAttribute="centerX" id="ZVM-lH-qor"/>
+                            <constraint firstItem="wQs-mK-vmP" firstAttribute="leading" secondItem="JZm-jF-IbZ" secondAttribute="leadingMargin" constant="-71" id="ZbI-9M-Ulf"/>
+                            <constraint firstItem="wQs-mK-vmP" firstAttribute="top" secondItem="EaL-fD-8Gm" secondAttribute="bottom" constant="2" id="bpO-JU-lZ3"/>
+                            <constraint firstItem="wQs-mK-vmP" firstAttribute="centerX" secondItem="gh8-Uu-PnC" secondAttribute="centerX" id="e6H-32-0T0"/>
+                            <constraint firstItem="Pcb-rr-c2z" firstAttribute="top" secondItem="wQs-mK-vmP" secondAttribute="bottom" constant="99" id="kF9-SP-41K"/>
                             <constraint firstItem="EaL-fD-8Gm" firstAttribute="top" secondItem="kOc-Sp-oYg" secondAttribute="bottom" constant="2" id="ldf-rO-rkz"/>
                             <constraint firstItem="gh8-Uu-PnC" firstAttribute="leading" secondItem="Pcb-rr-c2z" secondAttribute="leading" id="nk3-Oh-sVh"/>
                             <constraint firstItem="Pcb-rr-c2z" firstAttribute="top" secondItem="gh8-Uu-PnC" secondAttribute="bottom" id="p1s-r7-DPG"/>
