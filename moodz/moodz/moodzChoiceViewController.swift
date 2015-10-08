@@ -1,5 +1,5 @@
 //
-//  moodzCollectionViewController.swift
+//  moodzChoiceViewController.swift
 //  moodz
 //
 //  Created by Anthony Plescia on 2015-10-03.
@@ -11,7 +11,7 @@ import UIKit
 
 class moodzChoiceViewController : UIViewController {
     
-    //Function to save query to User Defaults depending on mood choice
+    //Function to save a rudimentary query to User Defaults depending on mood choice
     @IBAction func myMood(sender: UIButton){
         let userDefaults = NSUserDefaults.standardUserDefaults()
         

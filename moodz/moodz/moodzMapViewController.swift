@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  moodzMapViewController.swift
 //  moodz
 //
 //  Created by Anthony Plescia on 2015-09-30.
@@ -81,8 +81,8 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         print("mapview delegate method being called")
         
-        //If we've already done one search, stop spamming performSearch and jerking the map around
-        if (timesUpdated >= 1) {return}
+        //If we've already seen a few MapView delegate calls, stop spamming performSearch and jerking the map around
+        if (timesUpdated >= 3) {return}
 
         //stop snapping of map to user location
         self.locationManager.stopUpdatingLocation()
@@ -140,7 +140,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
                     annotation.subtitle = ""
                     annotation.title = item.placemark.name!
                     
-                    //explicitly handle nil optionals
+                    //handle nil optionals and combine street names with street numbers
                     if item.placemark.subThoroughfare != nil{
                         annotation.subtitle = annotation.subtitle! + item.placemark.subThoroughfare! + " "
                     }
@@ -152,7 +152,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
                     annotation.coordinate = item.placemark.coordinate
                     self.mapView.addAnnotation(annotation)
                     
-                    //'select' pin of closest activity found my method
+                    //'select' pin of closest relevant activity found
                     if (annotation.title == closestPlace && theLocation.distanceFromLocation(CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)) == min){
                         self.mapView.selectAnnotation(annotation, animated: true)
                         self.locationManager.stopUpdatingLocation()
