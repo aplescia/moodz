@@ -19,6 +19,9 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     //get selected query from userdefaults
     let query : String = NSUserDefaults.standardUserDefaults().stringForKey("moodzChoice")!
     
+    //keep tracking of how many times we've updated the map
+    var timesUpdated = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.questionLabel.hidden = true
@@ -78,9 +81,11 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         print("mapview delegate method being called")
         
+        //If we've already done one search, stop spamming performSearch and jerking the map around
+        if (timesUpdated >= 1) {return}
+
         //stop snapping of map to user location
         self.locationManager.stopUpdatingLocation()
-        //compare locations
         
         let location : CLLocation = locationManager.location!
         print("location : \(location.coordinate)")
@@ -88,6 +93,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
         
         performSearch(userLocation)
         
+        timesUpdated++
         
     }
     
@@ -95,7 +101,6 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     
     //MARK: Add found results to map
     func performSearch(inputLocation : MKUserLocation) -> Void {
-        
         let theRequest = MKLocalSearchRequest()
         theRequest.naturalLanguageQuery = query
         print("Region : \(self.mapView.region)")
@@ -150,6 +155,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
                     //'select' pin of closest activity found my method
                     if (annotation.title == closestPlace && theLocation.distanceFromLocation(CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)) == min){
                         self.mapView.selectAnnotation(annotation, animated: true)
+                        self.locationManager.stopUpdatingLocation()
                     }
                     
                 }
