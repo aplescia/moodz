@@ -12,20 +12,20 @@ import UIKit
 class moodzChoiceViewController : UIViewController {
     
     //Function to save a rudimentary query to User Defaults depending on mood choice
-    @IBAction func myMood(sender: UIButton){
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+    @IBAction func myMood(_ sender: UIButton){
+        let userDefaults = UserDefaults.standard
         
         
         if (sender.titleLabel!.text == "Studious"){
-            userDefaults.setObject("Coffee", forKey: "moodzChoice")
+            userDefaults.set("Coffee", forKey: "moodzChoice")
         }else if (sender.titleLabel!.text == "Adventurous"){
-            userDefaults.setObject("hiking", forKey: "moodzChoice")
+            userDefaults.set("hiking", forKey: "moodzChoice")
         }else if (sender.titleLabel!.text == "Vivacious"){
-            userDefaults.setObject("clubbing", forKey: "moodzChoice")
+            userDefaults.set("clubbing", forKey: "moodzChoice")
         }else if (sender.titleLabel!.text == "Active"){
-            userDefaults.setObject("gym", forKey: "moodzChoice")
+            userDefaults.set("gym", forKey: "moodzChoice")
         }else if (sender.titleLabel!.text == "Relaxed"){
-            userDefaults.setObject("entertainment", forKey: "moodzChoice")
+            userDefaults.set("entertainment", forKey: "moodzChoice")
         }
         
     }

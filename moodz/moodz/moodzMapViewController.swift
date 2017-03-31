@@ -17,14 +17,14 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     let locationManager = CLLocationManager()
     
     //get selected query from userdefaults
-    let query : String = NSUserDefaults.standardUserDefaults().stringForKey("moodzChoice")!
+    let query : String = UserDefaults.standard.string(forKey: "moodzChoice")!
     
     //keep tracking of how many times we've updated the map
     var timesUpdated = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.questionLabel.hidden = true
+        self.questionLabel.isHidden = true
         self.locationManager.delegate = self
         self.mapView.delegate = self
         
@@ -32,7 +32,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
         
         //request user permissions
         self.locationManager.requestAlwaysAuthorization()
-        self.mapView.mapType = MKMapType.Standard
+        self.mapView.mapType = MKMapType.standard
         
         print("updating location")
         self.mapView.showsUserLocation = true
@@ -44,7 +44,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     }
     
     //Override ViewDidAppear method in order to prevent race conditions
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.mapView.removeAnnotations(self.mapView.annotations)
         
     }
@@ -60,15 +60,14 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     
     //MARK: Delegate Method(s)
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-        
+    func locationManager(_manager: CLLocationManager, didUpdateLocations: [CLLocation]){
         print("location manager delegate method being called")
         
-        let loc = newLocation.coordinate
+        let loc = didUpdateLocations[0].coordinate
         let region = MKCoordinateRegionMakeWithDistance(loc, 100, 100)
         
         //change UI on main thread
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
             //MARK: Animation change due to Simulator Lag
             self.mapView.setRegion(region, animated: false)
             
@@ -78,7 +77,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     }
     
     
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         print("mapview delegate method being called")
         
         //If we've already seen a few MapView delegate calls, stop spamming performSearch and jerking the map around
@@ -93,14 +92,14 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
         
         performSearch(userLocation)
         
-        timesUpdated++
+        timesUpdated += 1
         
     }
     
     
     
     //MARK: Add found results to map
-    func performSearch(inputLocation : MKUserLocation) -> Void {
+    func performSearch(_ inputLocation : MKUserLocation) -> Void {
         let theRequest = MKLocalSearchRequest()
         theRequest.naturalLanguageQuery = query
         print("Region : \(self.mapView.region)")
@@ -119,7 +118,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
         var closestPlace = "Nothing found :(" //dummy value
         
         
-        theSearch.startWithCompletionHandler({(request,error)->Void in
+        theSearch.start(completionHandler: {(request,error)->Void in
             if let error = error{
                 print(error)
             }else if let request=request{
@@ -127,7 +126,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
                 for item in request.mapItems{
                     //debugging statements
                     print("Place : \(item.placemark)")
-                    let distance = theLocation.distanceFromLocation(item.placemark.location!)
+                    let distance = theLocation.distance(from: item.placemark.location!)
                     print("Distance : \(distance)")
                     //update closestPlace if this item is closer than the current closestPlace
                     if (distance < min){
@@ -153,7 +152,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
                     self.mapView.addAnnotation(annotation)
                     
                     //'select' pin of closest relevant activity found
-                    if (annotation.title == closestPlace && theLocation.distanceFromLocation(CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)) == min){
+                    if (annotation.title == closestPlace && theLocation.distance(from: CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)) == min){
                         self.mapView.selectAnnotation(annotation, animated: true)
                         self.locationManager.stopUpdatingLocation()
                     }
@@ -172,7 +171,7 @@ class moodzMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
                 //We didn't find anything
                 self.questionLabel.text = closestPlace
             }
-            self.questionLabel.hidden = false
+            self.questionLabel.isHidden = false
             
         })
     }

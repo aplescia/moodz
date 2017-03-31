@@ -14,7 +14,7 @@
 		A8FB7BF01BC4540E006F0441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FB7BEE1BC4540E006F0441 /* LaunchScreen.storyboard */; };
 		A8FB7BFB1BC4540E006F0441 /* moodzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7BFA1BC4540E006F0441 /* moodzTests.swift */; };
 		A8FB7C061BC4540E006F0441 /* moodzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7C051BC4540E006F0441 /* moodzUITests.swift */; };
-		A8FB7C151BC45526006F0441 /* moodzChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7C141BC45526006F0441 /* moodzChoiceViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A8FB7C151BC45526006F0441 /* moodzChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FB7C141BC45526006F0441 /* moodzChoiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,13 +195,16 @@
 				TargetAttributes = {
 					A8FB7BE11BC4540E006F0441 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 					};
 					A8FB7BF51BC4540E006F0441 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = A8FB7BE11BC4540E006F0441;
 					};
 					A8FB7C001BC4540E006F0441 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = A8FB7BE11BC4540E006F0441;
 					};
 				};
@@ -407,6 +410,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alps.moodz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -419,6 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alps.moodz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -430,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alps.moodzTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moodz.app/moodz";
 			};
 			name = Debug;
@@ -442,6 +448,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alps.moodzTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moodz.app/moodz";
 			};
 			name = Release;
@@ -453,6 +460,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alps.moodzUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = moodz;
 				USES_XCTRUNNER = YES;
 			};
@@ -465,6 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alps.moodzUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = moodz;
 				USES_XCTRUNNER = YES;
 			};
